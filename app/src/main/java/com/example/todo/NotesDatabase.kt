@@ -12,7 +12,9 @@ abstract class NotesDatabase : RoomDatabase(){
     companion object{
         private lateinit var databaseInsatance : NotesDatabase
         fun getDatabase(context : Context) : NotesDatabase{
-            val instance = Room.databaseBuilder(context.applicationContext, NotesDatabase::class.java, "note_db").build()
+            val instance = Room.databaseBuilder(
+                context.applicationContext, NotesDatabase::class.java, "note_db")
+                .build()
             return instance
         }
     }
